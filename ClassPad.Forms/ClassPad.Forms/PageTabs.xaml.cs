@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ClassPad.Forms
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PageTabs : TabbedPage
     {
-        public MainPage()
+        public PageTabs ()
         {
             InitializeComponent();
         }
+
     }
 }

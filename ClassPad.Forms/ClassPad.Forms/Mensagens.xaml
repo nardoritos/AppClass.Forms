@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#b3dfe3ee"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClassPad.Forms.Images"
+             x:Class="ClassPad.Forms.Mensagens">
+    <StackLayout>
+        <SearchBar  Placeholder="Procurar..." 
+        			TextChanged="OnSearchTextChanged"
+                    FontSize="20">
+            <SearchBar.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="ERASLGHT.TTF"/>
+                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                </OnPlatform>
+            </SearchBar.FontFamily>
+        </SearchBar>
+        <ListView   x:Name="listView"
+			        IsPullToRefreshEnabled="true"
+			        Refreshing="OnRefreshing"
+                    HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Image x:Name ="image" Source="{Binding IconSource}" HeightRequest="25" WidthRequest="25"/>
+                            <StackLayout Padding="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                                <Label Text="{Binding nomemsg}" FontSize="20" TextColor="Black">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label Text="{Binding datamsg}" FontSize="16" TextColor="Black">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                            <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                            </StackLayout>
+                            <Image Source="{Binding CheckSource}" HeightRequest="25"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

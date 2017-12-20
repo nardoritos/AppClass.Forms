@@ -1,10 +1,13 @@
 ﻿{
   "dependencies": {
+    "Microsoft.CSharp": "4.4.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Xamarin.Forms": "2.4.0.280"
+    "Newtonsoft.Json": "10.0.3",
+    "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+    "Xamarin.Forms": "2.5.0.121934"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10586": {}
   },
   "runtimes": {
     "win10-arm": {},

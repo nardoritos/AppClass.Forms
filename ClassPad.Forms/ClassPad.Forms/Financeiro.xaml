@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#b3dfe3ee"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClassPad.Forms.Images"
+             x:Class="ClassPad.Forms.Financeiro">
+    <StackLayout>
+        <SearchBar  Placeholder="Procurar..." 
+
+                    FontSize="20">
+            <SearchBar.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="ERASLGHT.TTF"/>
+                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                </OnPlatform>
+            </SearchBar.FontFamily>
+        </SearchBar>
+        <ListView   x:Name="listView"
+			        IsPullToRefreshEnabled="true"
+
+                    HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5" Orientation="Horizontal">
+
+                            <BoxView x:Name ="boxView" Color="{Binding color}" WidthRequest="5" VerticalOptions="Fill"/>
+
+                            <StackLayout Padding="5,0,0,0" >
+
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Referência: " FontSize="18" TextColor="Black">
+                                        <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                        </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label Text="{Binding referencia}" 
+                                       FontSize="18" TextColor="{Binding color}">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Vencimento: "  TextColor="Black"
+                                       FontSize="16">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label Text="{Binding venc}" 
+                                       FontSize="16" TextColor="{Binding color}">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Valor: " TextColor="Black"
+                                       FontSize="16">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label Text="{Binding valor, StringFormat='R${0}'}" 
+                                       FontSize="16" TextColor="{Binding color}">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Pagamento: " TextColor="Black"
+                                       FontSize="16">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label Text="{Binding pag}" 
+                                       FontSize="16" TextColor="{Binding color}">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+                                
+                            </StackLayout>
+
+                            <Image Source="{Binding CheckSource}" HeightRequest="25"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

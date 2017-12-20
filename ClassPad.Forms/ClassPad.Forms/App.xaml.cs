@@ -13,7 +13,7 @@ namespace ClassPad.Forms
         {
             InitializeComponent();
 
-            MainPage = new ClassPad.Forms.MainPage();
+            MainPage = new ClassPad.Forms.LoginPage();
         }
 
         protected override void OnStart()
